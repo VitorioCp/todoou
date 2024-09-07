@@ -28,6 +28,12 @@ export const Register = () => {
       setErrorMessage("Preencha todos os campos");
       return;
     }
+    if (password.length < 5) {
+      console.error("A senha deve ter pelo menos 5 caracteres.");
+      setErrorMessage("A senha deve ter pelo menos 5 caracteres");
+      return;
+    }
+    
     try {
       const response = await api.post("/register", {
         login,
