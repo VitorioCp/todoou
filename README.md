@@ -27,6 +27,21 @@ Crie seu bando de dados usando o comando:
 
 ```docker run --name mysql -e MYSQL_ROOT_PASSWORD=docker -e MYSQL_USER=docker -e MYSQL_PASSWORD=docker -e MYSQL_DATABASE=mysql -p 3306:3306 -v C:\data:/var/lib/mysql --restart always -d mysql:latest```
 
+Configure o arquivo .env na raiz ```backend/```, para está recebendo DB_NAME, DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_DIALECT, JWT_SECRET e JWT_EXPIRES_IN
+Exemplo: 
+```
+DB_NAME=mysql
+DB_USER=docker
+DB_PASS=docker
+DB_HOST=localhost
+DB_PORT=3306
+DB_DIALECT=mysql
+
+JWT_SECRET=fwbwqef
+JWT_EXPIRES_IN=1h
+```
+### Observação: para facilitar o uso do sistema, o arquivo já vai está sendo enviado e configurado, com base no codigo fornecido para criar um bando de dados
+
 ---
 
 ### 3. Instalar Dependências
